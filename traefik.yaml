@@ -1,0 +1,25 @@
+http:
+  services:
+    backend:
+      loadBalancer:
+        servers:
+          - url: "http://cf-vs-vercel-vs-railway-bench-co.railway.internal:80"
+          - url: "http://cf-vs-vercel-vs-railway-bench-co-5642d225.railway.internal:80"
+          - url: "http://cf-vs-vercel-vs-railway-bench.railway.internal:80"
+        healthCheck:
+          path: /
+          interval: 10s
+          timeout: 5s
+
+  routers:
+    backend-router:
+      rule: "PathPrefix(`/`)"
+      service: backend
+      entryPoints:
+        - web
+      middlewares:
+        - compress
+
+  middlewares:
+    compress:
+      compress: {}
