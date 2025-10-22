@@ -3,9 +3,9 @@ http:
     backend:
       loadBalancer:
         servers:
-          - url: "http://cf-vs-vercel-vs-railway-bench-co.railway.internal:80"
-          - url: "http://cf-vs-vercel-vs-railway-bench-co-5642d225.railway.internal:80"
-          - url: "http://cf-vs-vercel-vs-railway-bench.railway.internal:80"
+          - url: "http://cf-vs-vercel-vs-railway-bench-co.railway.internal:8080"
+          - url: "http://cf-vs-vercel-vs-railway-bench-co-5642d225.railway.internal:8080"
+          - url: "http://cf-vs-vercel-vs-railway-bench.railway.internal:8080"
         healthCheck:
           path: /
           interval: 10s
